@@ -6,8 +6,9 @@ module.exports = {
     },
     extends: [
         'airbnb',
+        'plugin:cypress/recommended',
         'plugin:jest/recommended',
-        "plugin:jsx-a11y/recommended",
+        'plugin:jsx-a11y/recommended',
         'plugin:react/recommended',
     ],
     overrides: [
@@ -49,6 +50,14 @@ module.exports = {
         'linebreak-style': 'off',
         'import/prefer-default-export': 'off',
         'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+        'import/no-unresolved': [
+            2,
+            {
+                ignore: [
+                    '@badeball/cypress-cucumber-preprocessor/esbuild',
+                ],
+            },
+        ],
         indent: ['error', 4, { SwitchCase: 1 }],
         'no-param-reassign': [2, { props: false }],
         'object-curly-newline': [
